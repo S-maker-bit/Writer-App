@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writer App</title>
+  <link href= "style.css" rel="stylesheet" type="text/css">
+
+
+</head>
+<body class="light">
+  <header>
+    <h1>✍️ Writer</h1>
+    <div class="buttons">
+      <select id="themeSelect" onchange="changeTheme()">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+        <option value="sepia">Sepia</option>
+        <option value="midnight">Midnight Blue</option>
+      </select>
+      <button onclick="newDoc()">New</button>
+      <button onclick="saveDoc()">Save</button>
+      <button onclick="downloadDoc()">Download</button>
+      <button onclick="toggleFullScreen()">Full Screen</button>
+    </div>
+  </header>
+
+<label for="docList"><b>&nbsp;My Documents:</b></label>
+<select id="docList" onchange="loadDoc(this.value)">
+  <option value="">Select Document</option>
+</select>
+
+
+
+  <div class="editor">
+    <textarea id="editor" placeholder="Start writing..."></textarea>
+  </div>
+
+  <footer>
+    <span id="status">No document open</span>
+    <span id="wordCount">Words: 0</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

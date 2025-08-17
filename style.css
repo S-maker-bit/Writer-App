@@ -1,0 +1,56 @@
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0; padding: 0;
+    transition: background 0.3s, color 0.3s;
+  }
+  header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 10px 20px; background: #4f46e5; color: white;
+  }
+  header h1 { margin: 0; }
+  header .buttons button, header .buttons select {
+    margin-left: 10px; padding: 6px 12px;
+    border: none; border-radius: 5px;
+    cursor: pointer; font-size: 14px;
+  }
+  .editor { padding: 20px; }
+  textarea {
+    width: 100%; height: 65vh;
+    padding: 12px; font-size: 16px;
+    border: 1px solid #ccc; border-radius: 6px;
+    resize: none;
+    background: white; color: black;
+  }
+  footer {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 10px; font-size: 14px; color: gray;
+  }
+
+
+  body.light { background: #ffffff; color: #000000; }
+  body.light textarea { background: #ffffff; color: #000000; border: 1px solid #ccc; }
+  body.light #docList { background: #fafafa; color: #000; border: 1px solid #ccc; }
+
+  body.dark { background: #111827; color: #f9fafb; }
+  body.dark textarea { background: #1f2937; color: #f9fafb; border: 1px solid #374151; }
+  body.dark #docList { background: #1f2937; color: #f9fafb; border: 1px solid #374151; }
+
+  body.sepia { background: #f4ecd8; color: #5b4636; }
+  body.sepia textarea { background: #fdf6e3; color: #5b4636; border: 1px solid #d9c6a5; }
+  body.sepia #docList { background: #fdf6e3; color: #5b4636; border: 1px solid #d9c6a5; }
+
+  body.midnight { background: #0f172a; color: #e2e8f0; }
+  body.midnight textarea { background: #1e293b; color: #e2e8f0; border: 1px solid #334155; }
+  body.midnight #docList { background: #1e293b; color: #e2e8f0; border: 1px solid #334155; }
+
+  /* Docs list */
+  #docList {
+    margin: 10px 20px; padding: 10px;
+    border-radius: 5px;
+    max-height: 150px; overflow-y: auto;
+  }
+  #docList div {
+    padding: 6px; cursor: pointer;
+    border-bottom: 1px solid #ddd;
+  }
+  #docList div:hover { background: rgba(0,0,0,0.1); }
