@@ -25,8 +25,35 @@ const editor = document.getElementById("editor");
     docList.appendChild(opt);
   }
 }
+function renameDoc() {
+  if (!currentDoc) {
+    alert("No document is currently loaded!");
+    return;
+  }
+
+  let newName = prompt("Enter a new name for the document:", currentDoc);
+  if (!newName || newName === currentDoc) return;
+
+  if (documents[newName]) {
+    let confirmOverwrite = confirm(
+      "A document with this name already exists. Overwrite?"
+    );
+    if (!confirmOverwrite) return;
+  }
 
 
+  documents[newName] = documents[currentDoc];
+
+  delete documents[currentDoc];
+
+  localStorage.setItem("writer-docs", JSON.stringify(documents));
+
+
+  currentDoc = newName;
+  status.textContent = "Renamed to '" + newName + "'";
+
+  refreshDocList();
+}
 
     function newDoc() {
       currentDoc = null;
